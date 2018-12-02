@@ -1,1 +1,2 @@
 AiportDatabase*.json
+!cloud_sql_proxy.exe
