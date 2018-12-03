@@ -16,7 +16,7 @@
 				<nav class="nav nav-masthead justify-content-center">
 					<a class="nav-link active" href="index.php">Home</a>
 					<a class="nav-link" href="todays-flights.php">Today's Flights</a>
-					<a class="nav-link" href="#">Contact</a>
+					<a class="nav-link" href="example-queries.php">Example Queries</a>
 				</nav>
 			</div>
 		</header>

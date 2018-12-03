@@ -16,15 +16,15 @@
 				<nav class="nav nav-masthead justify-content-center">
 					<a class="nav-link" href="index.php">Home</a>
 					<a class="nav-link active" href="todays-flights.php">Today's Flights</a>
-					<a class="nav-link" href="#">Contact</a>
+					<a class="nav-link" href="example-queries.php">Example Queries</a>
 				</nav>
 			</div>
 		</header>
 	
 		<div class="container">
 		<!-- table displays today's flights -->
-			<div style="width:65%">
-				<table class="table table-striped table-bordered" table style="margin-left:30px">
+			<div>
+				<table class="table table-bordered" table style="line-height: 1.0">
 					<th>Flight ID</th>
 					<th>Estimated Departure</th>
 					<th>Delayed?</th>
@@ -36,7 +36,7 @@
 					$result = $conn->query($query);
 					while ($row = $result->fetch_array()) {
 						print '<tr>';
-						print '<td>' . $row["FlightID"] . '</td><td>' . $row["EstDeparture"] . '</td><td>' . $row["Delay"] . '</td><td>' . $row["Cancelled"] . '</td><td>' . $row["Origin"] . '</td><td>' . $row["Desination"] . '</td>';
+						print '<td>' . $row["FlightID"] . '</td><td>' . $row["EstDeparture"] . '</td><td>' . (boolval($row["Delay"]) ? '&check;' : '	&#x2717') . '</td><td>' . (boolval($row["Cancelled"]) ? '&check;' : '	&#x2717') . '</td><td>' . $row["Origin"] . '</td><td>' . $row["Desination"] . '</td>';
 						print '</tr>';
 					}
 					?>

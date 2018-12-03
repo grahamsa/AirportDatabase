@@ -15,8 +15,30 @@ a:hover {
 .btn-secondary:focus {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
+  background-color: #333;
   border: .05rem solid #fff;
+}
+
+.card-header {
+  background-color: #222;
+}
+
+.table {
+  line-height: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.card-body {
+  background-color: #333;
+}
+
+.btn-link,
+.btn-link:hover,
+.btn-link:focus {
+  color: #FFF;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #222;
 }
 
 
@@ -60,6 +82,7 @@ body {
   color: rgba(255, 255, 255, .5);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
+  line-height: 2.0;
 }
 
 .nav-masthead .nav-link:hover,
