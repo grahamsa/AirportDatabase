@@ -1,0 +1,25 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+handlers:
+- url: /
+  script: index.php
+  
+  # Serve styles as static resources.
+- url: /(.+\.(css|js))$
+  static_files: \1
+  upload: .+\.(css|js)$
+  application_readable: true
+
+# Serve php scripts.
+- url: /(.+\.php)$
+  script: \1
+  
+env_variables:
+  # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
+  # values obtained when configuring your Cloud SQL instance.
+  MYSQL_USER: root
+  MYSQL_PASSWORD: ''
+  MYSQL_DSN: mysql:dbname=airportdatabase;unix_socket=/cloudsql/aiportdatabase:us-east1:airportdatabase
+beta_settings:
+  cloud_sql_instances: "aiportdatabase:us-east1:airportdatabase"
